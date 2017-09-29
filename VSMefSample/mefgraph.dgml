@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph Layout="Sugiyama" GraphDirection="RightToLeft" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="VSMefSample_Pear" Label="VSMefSample.Pear" />
+    <Node Id="VSMefSample_Tree" Label="VSMefSample.Tree" />
+    <Node Id="Microsoft_VisualStudio_Composition_MetadataViewClassProvider" Label="Microsoft.VisualStudio.Composition.MetadataViewClassProvider" Category="VsMEFBuiltIn" />
+    <Node Id="VSMefSample_Apple" Label="VSMefSample.Apple" />
+    <Node Id="Microsoft_VisualStudio_Composition_PassthroughMetadataViewProvider" Label="Microsoft.VisualStudio.Composition.PassthroughMetadataViewProvider" Category="VsMEFBuiltIn" />
+    <Node Id="Microsoft_VisualStudio_Composition_ExportProvider_ExportProviderAsExport" Label="Microsoft.VisualStudio.Composition.ExportProvider.ExportProviderAsExport" Category="VsMEFBuiltIn" />
+  </Nodes>
+  <Links>
+    <Link Source="VSMefSample_Tree" Target="VSMefSample_Pear" />
+    <Link Source="VSMefSample_Apple" Target="VSMefSample_Tree" Category="ExportFactory" />
+    <Link Source="VSMefSample_Pear" Target="VSMefSample_Tree" Category="ExportFactory" />
+    <Link Source="VSMefSample_Tree" Target="VSMefSample_Apple" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" IsContainment="True" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Link" GroupLabel="ExportFactory">
+      <Condition Expression="HasCategory('ExportFactory')" />
+      <Setter Property="StrokeDashArray" Value="2,2" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="VsMEFBuiltIn">
+      <Condition Expression="HasCategory('VsMEFBuiltIn')" />
+      <Setter Property="Visibility" Value="Hidden" />
+    </Style>
+  </Styles>
+</DirectedGraph>
