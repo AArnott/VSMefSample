@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net462</TargetFrameworks>
+    <TargetFrameworks>net462;netcoreapp2.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Composition" Version="15.3.38" />
     <PackageReference Include="System.Composition" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Validation" Version="15.3.32" />
   </ItemGroup>
 
 </Project>
